@@ -1,0 +1,83 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+ext {
+  bintrayRepo = "themed-toggle-button-group"
+  bintrayName = "nl.bryanderidder.themed-toggle-button-group"
+
+  publishedGroupId = 'nl.bryanderidder'
+  libraryName = 'themed-toggle-button-group'
+  artifact = 'themed-toggle-button-group'
+
+  libraryDescription = 'A customisable toggle button group for Android'
+
+  siteUrl = 'https://github.com/Bryanx/themed-toggle-button-group'
+  gitUrl = 'https://github.com/Bryanx/themed-toggle-button-group.git'
+  gitConnection = 'scm:git:github.com/Bryanx/themed-toggle-button-group.git'
+  gitDeveloperConnection = 'scm:git:ssh://github.com/Bryanx/themed-toggle-button-group.git'
+  gitBranchUrl = 'https://github.com/Bryanx/themed-toggle-button-group/tree/master'
+
+  libraryVersion = '1.4.1'
+
+  developerId = 'bryanderidder'
+  developerName = 'Bryan de Ridder'
+  developerEmail = 'br.deridder@gmail.com'
+
+  licenseName = 'MIT License'
+  licenseUrl = 'https://github.com/Bryanx/themed-toggle-button-group/blob/master/LICENSE'
+}
+
+group = 'com.github.Bryanx'
+
+android {
+  compileSdkVersion 30
+  buildToolsVersion "29.0.2"
+
+  kotlinOptions {
+    jvmTarget = JavaVersion.VERSION_1_8.toString()
+  }
+
+  testOptions {
+    animationsDisabled = true
+  }
+
+  defaultConfig {
+    minSdkVersion 14
+    targetSdkVersion 30
+    versionCode 13
+    versionName libraryVersion
+
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+  }
+
+}
+
+dependencies {
+  implementation 'androidx.core:core-ktx:1.2.0'
+  implementation 'com.google.android.flexbox:flexbox:3.0.0'
+
+  testImplementation "junit:junit:${rootProject.junitVersion}"
+  androidTestImplementation "androidx.core:core:${rootProject.androidxCoreVersion}"
+  androidTestImplementation "androidx.recyclerview:recyclerview:${rootProject.androidxRecyclerViewVersion}"
+  androidTestImplementation "androidx.annotation:annotation:${rootProject.androidxAnnotationVersion}"
+  androidTestImplementation "androidx.test.ext:junit:${rootProject.androidxTestExtVersion}"
+  androidTestImplementation "androidx.test:runner:${rootProject.androidxTestVersion}"
+  androidTestImplementation "androidx.test:rules:${rootProject.androidxTestVersion}"
+  androidTestImplementation "androidx.test.espresso:espresso-core:${rootProject.androidxEspressoVersion}"
+  androidTestImplementation "org.jetbrains.kotlin:kotlin-stdlib:${rootProject.kotlinVersion}"
+}
+
+repositories {
+  mavenCentral()
+}
+
+apply from: "${rootProject.projectDir}/scripts/publish-mavencentral.gradle"

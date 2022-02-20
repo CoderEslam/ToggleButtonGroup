@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup
+        android:id="@+id/themedButtonGroup"
+        android:layout_width="match_parent"
+        android:layout_height="155dp"
+        android:layout_marginHorizontal="32dp"
+        app:alignItems="center">
+
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/btnMultipleChoice"
+            android:layout_width="0dp"
+            android:layout_height="145dp"
+            app:layout_flexGrow="1"
+            app:toggle_selectedTextColor="@android:color/white"
+            app:toggle_selectedBackgroundColor="#5e6fed"
+            app:toggle_icon="@drawable/ic_check_circle_outline_24px"
+            app:toggle_iconGravity="top|center"
+            app:toggle_iconPaddingTop="15dp"
+            app:toggle_iconPaddingHorizontal="15dp"
+            app:toggle_textPaddingBottom="20dp"
+            app:toggle_text="Multiple choice"
+            app:toggle_textGravity="bottom|center" />
+
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/btnTyped"
+            android:layout_width="0dp"
+            android:layout_height="145dp"
+            app:layout_flexGrow="1"
+            app:toggle_selectedTextColor="@android:color/white"
+            app:toggle_selectedBackgroundColor="#5e6fed"
+            app:toggle_icon="@drawable/ic_spellcheck_24px"
+            app:toggle_iconGravity="top|center"
+            app:toggle_iconPaddingTop="15dp"
+            app:toggle_iconPaddingHorizontal="15dp"
+            app:toggle_textPaddingBottom="20dp"
+            app:toggle_text="Spellcheck mode"
+            app:toggle_textGravity="bottom|center" />
+
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/btnMemory"
+            android:layout_width="0dp"
+            android:layout_height="145dp"
+            app:layout_flexGrow="1"
+            app:toggle_selectedTextColor="@android:color/white"
+            app:toggle_selectedBackgroundColor="#5e6fed"
+            app:toggle_icon="@drawable/ic_query_builder_black_24dp"
+            app:toggle_iconGravity="top|center"
+            app:toggle_iconPaddingTop="15dp"
+            app:toggle_iconPaddingHorizontal="15dp"
+            app:toggle_textPaddingBottom="20dp"
+            app:toggle_text="Time challenge"
+            app:toggle_textGravity="bottom|center" />
+
+    </nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup>
+
+    <TextView
+        android:id="@+id/tvText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:textColor="#5e6fed"
+        android:text=""/>
+
+</LinearLayout>

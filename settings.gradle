@@ -1,0 +1,6 @@
+rootProject.name='ThemedToggleButtonGroup'
+include ':library'
+include ':demo-toggle-cards'
+include ':demo-horizontal-scroll'
+include ':demo-programmatically-add-buttons'
+include ':library-compose'
